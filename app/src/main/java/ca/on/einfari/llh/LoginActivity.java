@@ -19,7 +19,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         txtUsername = (EditText) findViewById(R.id.txtUsername);
         txtPassword = (EditText) findViewById(R.id.txtPassword);
     }
@@ -27,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     public void login(View view) {
         txtUsername.setError(null);
         txtPassword.setError(null);
-        View focusedView = null;
+        View focusedView;
 
         if (TextUtils.isEmpty(txtUsername.getText().toString().trim())) {
             txtUsername.setError("Username is required.");
@@ -46,8 +45,7 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         } else {
-            Toast.makeText(this, "Username or password is incorrect.",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Username or password is incorrect.", Toast.LENGTH_SHORT).show();
         }
     }
 
