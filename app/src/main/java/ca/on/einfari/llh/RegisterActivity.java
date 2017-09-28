@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -15,6 +16,8 @@ public class RegisterActivity extends AppCompatActivity {
     EditText txtConfirmPassword;
     EditText txtFirstName;
     EditText txtLastName;
+    RadioButton radMale;
+    RadioButton radFemale;
     EditText txtEmail;
 
     @Override
@@ -27,6 +30,8 @@ public class RegisterActivity extends AppCompatActivity {
         txtConfirmPassword = (EditText) findViewById(R.id.txtConfirmPassword);
         txtFirstName = (EditText) findViewById(R.id.txtFirstName);
         txtLastName = (EditText) findViewById(R.id.txtLastName);
+        radMale = (RadioButton) findViewById(R.id.radMale);
+        radFemale = (RadioButton) findViewById(R.id.radFemale);
         txtEmail = (EditText) findViewById(R.id.txtEmail);
     }
 
@@ -36,6 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
         txtConfirmPassword.setError(null);
         txtFirstName.setError(null);
         txtLastName.setError(null);
+        radFemale.setError(null);
         txtEmail.setError(null);
         View focusedView;
 
@@ -70,6 +76,12 @@ public class RegisterActivity extends AppCompatActivity {
             focusedView = txtLastName;
             focusedView.requestFocus();
             return;
+        } else if (!radMale.isChecked() && !radFemale.isChecked()) {
+            radMale.setFocusableInTouchMode(true);
+            radMale.setError("Gender is required.");
+            focusedView = radMale;
+            focusedView.requestFocus();
+            return;
         } else if (TextUtils.isEmpty(txtEmail.getText().toString().trim())) {
             txtEmail.setError("E-mail is required.");
             focusedView = txtEmail;
@@ -82,5 +94,10 @@ public class RegisterActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         Toast.makeText(this, "You have registered successfully.", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onRadioButtonClicked(View view) {
+        radMale.setFocusableInTouchMode(false);
+        radMale.setError(null);
     }
 }

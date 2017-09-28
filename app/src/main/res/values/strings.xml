@@ -9,4 +9,6 @@
     <string name="first_name_here">First name here..</string>
     <string name="last_name_here">Last name here..</string>
     <string name="e_mail_here">E-mail here…</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
 </resources>
