@@ -1,3 +1,11 @@
+/*
+    LoginActivity.java
+    Assignment 1
+
+    Revision History:
+        Gonzalo Ramos Zúñiga, 2017.09.18: Created
+ */
+
 package ca.on.einfari.llh;
 
 import android.content.Intent;

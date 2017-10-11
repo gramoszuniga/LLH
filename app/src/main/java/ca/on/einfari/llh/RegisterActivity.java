@@ -1,3 +1,11 @@
+/*
+    RegisterActivity.java
+    Assignment 1
+
+    Revision History:
+        Gonzalo Ramos Zúñiga, 2017.09.27: Created
+ */
+
 package ca.on.einfari.llh;
 
 import android.content.Intent;
@@ -91,9 +99,9 @@ public class RegisterActivity extends AppCompatActivity {
 
         // Code to insert user into the database
 
+        Toast.makeText(this, "You have registered successfully.", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
-        Toast.makeText(this, "You have registered successfully.", Toast.LENGTH_SHORT).show();
     }
 
     public void onRadioButtonClicked(View view) {

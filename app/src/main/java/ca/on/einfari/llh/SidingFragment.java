@@ -1,3 +1,11 @@
+/*
+    SidingFragment.java
+    Assignment 1
+
+    Revision History:
+        Gonzalo Ramos Zúñiga, 2017.09.22: Created
+ */
+
 package ca.on.einfari.llh;
 
 import android.os.Bundle;
@@ -6,7 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class SidingFragment extends Fragment{
+public class SidingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

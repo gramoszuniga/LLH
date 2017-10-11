@@ -1,3 +1,11 @@
+/*
+    FencingFragment.java
+    Assignment 1
+
+    Revision History:
+        Gonzalo Ramos Zúñiga, 2017.09.22: Created
+ */
+
 package ca.on.einfari.llh;
 
 import android.os.Bundle;

@@ -59,23 +59,25 @@
 
             <Button
                 android:id="@+id/btnLogin"
-                style="?android:textAppearanceSmall"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:onClick="login"
                 android:text="@string/login"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:theme="@style/LLH.Button" />
 
             <Button
                 android:id="@+id/btnRegister"
-                style="?android:textAppearanceSmall"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:onClick="register"
                 android:text="@string/register"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:theme="@style/LLH.Button" />
         </LinearLayout>
 
     </ScrollView>
