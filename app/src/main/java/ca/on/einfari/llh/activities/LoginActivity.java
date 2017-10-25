@@ -6,9 +6,10 @@
         Gonzalo Ramos Zúñiga, 2017.09.18: Created
  */
 
-package ca.on.einfari.llh;
+package ca.on.einfari.llh.activities;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,10 +17,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.concurrent.ExecutionException;
+
+import ca.on.einfari.llh.R;
+import ca.on.einfari.llh.data.LLHDatabase;
+import ca.on.einfari.llh.data.User;
+
 public class LoginActivity extends AppCompatActivity {
 
-    private static final String USERNAME = "admin";
-    private static final String PASSWORD = "admin";
     EditText txtUsername;
     EditText txtPassword;
 
@@ -27,11 +32,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        txtUsername = (EditText) findViewById(R.id.txtUsername);
-        txtPassword = (EditText) findViewById(R.id.txtPassword);
+        txtUsername = findViewById(R.id.txtUsername);
+        txtPassword = findViewById(R.id.txtPassword);
     }
 
-    public void login(View view) {
+    public void login(View view) throws ExecutionException, InterruptedException {
         txtUsername.setError(null);
         txtPassword.setError(null);
         View focusedView;
@@ -48,8 +53,17 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        if (txtUsername.getText().toString().equals(USERNAME) &&
-                txtPassword.getText().toString().equals(PASSWORD)) {
+        User user = new AsyncTask<String, Void, User>() {
+
+            @Override
+            protected User doInBackground(String... strings) {
+                return LLHDatabase.getDatabase(getApplicationContext()).userDao().read(strings[0]);
+            }
+
+        }.execute(txtUsername.getText().toString()).get();
+
+        if (user != null && txtUsername.getText().toString().equals(user.getUserName()) &&
+                txtPassword.getText().toString().equals(user.getPassword())) {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         } else {
@@ -61,4 +75,11 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     }
+
+    @Override
+    protected void onDestroy() {
+        LLHDatabase.destroyInstance();
+        super.onDestroy();
+    }
+
 }

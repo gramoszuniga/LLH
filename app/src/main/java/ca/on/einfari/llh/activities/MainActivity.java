@@ -6,7 +6,7 @@
         Gonzalo Ramos Zúñiga, 2017.09.22: Created
  */
 
-package ca.on.einfari.llh;
+package ca.on.einfari.llh.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -19,6 +19,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import ca.on.einfari.llh.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
-        mViewPager = (ViewPager) findViewById(R.id.container);
+        mViewPager = findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,4 +100,5 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
     }
+
 }

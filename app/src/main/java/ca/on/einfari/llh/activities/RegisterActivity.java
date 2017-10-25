@@ -6,9 +6,10 @@
         Gonzalo Ramos Zúñiga, 2017.09.27: Created
  */
 
-package ca.on.einfari.llh;
+package ca.on.einfari.llh.activities;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,6 +17,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
+
+import java.util.concurrent.ExecutionException;
+
+import ca.on.einfari.llh.R;
+import ca.on.einfari.llh.data.LLHDatabase;
+import ca.on.einfari.llh.data.User;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -33,25 +40,26 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        txtUsername = (EditText) findViewById(R.id.txtUsername);
-        txtPassword = (EditText) findViewById(R.id.txtPassword);
-        txtConfirmPassword = (EditText) findViewById(R.id.txtConfirmPassword);
-        txtFirstName = (EditText) findViewById(R.id.txtFirstName);
-        txtLastName = (EditText) findViewById(R.id.txtLastName);
-        radMale = (RadioButton) findViewById(R.id.radMale);
-        radFemale = (RadioButton) findViewById(R.id.radFemale);
-        txtEmail = (EditText) findViewById(R.id.txtEmail);
+        txtUsername = findViewById(R.id.txtUsername);
+        txtPassword = findViewById(R.id.txtPassword);
+        txtConfirmPassword = findViewById(R.id.txtConfirmPassword);
+        txtFirstName = findViewById(R.id.txtFirstName);
+        txtLastName = findViewById(R.id.txtLastName);
+        radMale = findViewById(R.id.radMale);
+        radFemale = findViewById(R.id.radFemale);
+        txtEmail = findViewById(R.id.txtEmail);
     }
 
-    public void register(View view) {
+    public void register(View view) throws ExecutionException, InterruptedException {
         txtUsername.setError(null);
         txtPassword.setError(null);
         txtConfirmPassword.setError(null);
         txtFirstName.setError(null);
         txtLastName.setError(null);
-        radFemale.setError(null);
+        radMale.setError(null);
         txtEmail.setError(null);
         View focusedView;
+        final RadioButton checkedRadioButton;
 
         if (TextUtils.isEmpty(txtUsername.getText().toString().trim())) {
             txtUsername.setError("Username is required.");
@@ -97,15 +105,50 @@ public class RegisterActivity extends AppCompatActivity {
             return;
         }
 
-        // Code to insert user into the database
+        if (radMale.isChecked()) {
+            checkedRadioButton = radMale;
+        } else {
+            checkedRadioButton = radFemale;
+        }
 
-        Toast.makeText(this, "You have registered successfully.", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
+        long rowId = new AsyncTask<Void, Void, Long>() {
+
+            @Override
+            protected Long doInBackground(Void... voids) {
+                return LLHDatabase.getDatabase(getApplicationContext()).userDao().create(new User(
+                        txtUsername.getText().toString(),
+                        txtPassword.getText().toString(),
+                        txtFirstName.getText().toString(),
+                        txtLastName.getText().toString(),
+                        checkedRadioButton.getText().toString(),
+                        txtEmail.getText().toString()));
+            }
+
+        }.execute().get();
+
+        if (rowId == -1) {
+            Toast.makeText(RegisterActivity.this,
+                    "There has been a problem with your registration. Please try again.",
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(RegisterActivity.this, "You have registered successfully.",
+                    Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(RegisterActivity.this,
+                    LoginActivity.class);
+            startActivity(intent);
+        }
+
     }
 
     public void onRadioButtonClicked(View view) {
         radMale.setFocusableInTouchMode(false);
         radMale.setError(null);
     }
+
+    @Override
+    protected void onDestroy() {
+        LLHDatabase.destroyInstance();
+        super.onDestroy();
+    }
+
 }

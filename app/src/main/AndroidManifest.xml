@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".SplashActivity"
+            android:name=".activities.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,22 +20,22 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".activities.LoginActivity" />
 
         <activity
-            android:name=".RegisterActivity"
-            android:parentActivityName=".LoginActivity">
+            android:name=".activities.RegisterActivity"
+            android:parentActivityName=".activities.LoginActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="ca.on.einfari.llh.LoginActivity" />
+                android:value="ca.on.einfari.llh.activities.LoginActivity" />
         </activity>
 
         <activity
-            android:name=".MainActivity"
-            android:parentActivityName=".LoginActivity">
+            android:name=".activities.MainActivity"
+            android:parentActivityName=".activities.LoginActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="ca.on.einfari.llh.LoginActivity" />
+                android:value="ca.on.einfari.llh.activities.LoginActivity" />
         </activity>
 
     </application>
