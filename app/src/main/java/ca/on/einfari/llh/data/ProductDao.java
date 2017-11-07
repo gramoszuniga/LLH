@@ -3,7 +3,7 @@
     Assignment 2
 
     Revision History:
-        Gonzalo Ramos Zúñiga, 2017.10.25: Created
+        Gonzalo Ramos Zúñiga, 2017.10.27: Created
  */
 
 package ca.on.einfari.llh.data;

@@ -17,6 +17,7 @@ public class Quote {
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String email;
+    private String description;
 
     public Quote(String email) {
         this.email = email;
@@ -36,6 +37,14 @@ public class Quote {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
 }

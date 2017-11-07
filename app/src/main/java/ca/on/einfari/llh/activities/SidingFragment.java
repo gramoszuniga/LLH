@@ -17,9 +17,11 @@ import android.view.ViewGroup;
 import ca.on.einfari.llh.R;
 
 public class SidingFragment extends Fragment {
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_siding, container, false);
     }
+
 }
