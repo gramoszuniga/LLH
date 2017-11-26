@@ -23,7 +23,7 @@ public interface QuoteDao {
     @Insert
     long create(Quote quote);
 
-    @Query("SELECT * FROM quote")
+    @Query("SELECT * FROM quote ORDER BY id DESC")
     List<Quote> readAll();
 
     @Query("SELECT * FROM quote WHERE id = :id")

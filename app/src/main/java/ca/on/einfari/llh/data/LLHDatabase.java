@@ -72,6 +72,25 @@ public abstract class LLHDatabase extends RoomDatabase {
                 getDatabase(contexts[0]).productDao().create(new Product("Concrete Mix", "Bag"));
                 getDatabase(contexts[0]).productDao().create(new Product("1\"1/2 Galvanized Nail",
                         "Box"));
+                getDatabase(contexts[0]).quoteDao().create(new Quote("admin@admin.admin",
+                        "New Fence"));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 1, 36));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 2, 4));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 3, 4));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 5, 3));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 7, 3));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 9, 2));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 10, 8));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 11, 2));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 13, 6));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 14, 1));
+                getDatabase(contexts[0]).quoteDao().create(new Quote("admin@admin.admin",
+                        "Fence Replacement"));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(2, 1, 7));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(2, 5, 1));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(2, 9, 1));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(2, 11, 1));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(2, 13, 2));
                 return null;
             }
 

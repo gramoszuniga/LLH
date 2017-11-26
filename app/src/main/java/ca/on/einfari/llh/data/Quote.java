@@ -19,8 +19,9 @@ public class Quote {
     private String email;
     private String description;
 
-    public Quote(String email) {
+    public Quote(String email, String description) {
         this.email = email;
+        this.description = description;
     }
 
     public int getId() {
