@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_search) {
-            startActivity(new Intent(this, ListActivity.class));
+            startActivity(new Intent(this, QuoteListActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);

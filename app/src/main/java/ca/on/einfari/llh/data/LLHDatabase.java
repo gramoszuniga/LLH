@@ -30,6 +30,8 @@ public abstract class LLHDatabase extends RoomDatabase {
 
     public abstract MaterialsListDao materialsListDao();
 
+    public abstract MaterialsListWithProductDao materialsListWithProductDao();
+
     public static LLHDatabase getDatabase(final Context context) {
         if (instance == null) {
             instance = Room.databaseBuilder(context.getApplicationContext(), LLHDatabase.class,

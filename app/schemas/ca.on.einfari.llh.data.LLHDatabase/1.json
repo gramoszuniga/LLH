@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "c432f8d095968faf28849c9b7a8831ed",
+    "identityHash": "7f7fa737937d6a9206d68acd365a82a3",
     "entities": [
       {
         "tableName": "User",
@@ -153,7 +153,24 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_MaterialsList_quote",
+            "unique": false,
+            "columnNames": [
+              "quote"
+            ],
+            "createSql": "CREATE  INDEX `index_MaterialsList_quote` ON `${TABLE_NAME}` (`quote`)"
+          },
+          {
+            "name": "index_MaterialsList_product",
+            "unique": false,
+            "columnNames": [
+              "product"
+            ],
+            "createSql": "CREATE  INDEX `index_MaterialsList_product` ON `${TABLE_NAME}` (`product`)"
+          }
+        ],
         "foreignKeys": [
           {
             "table": "Quote",
@@ -182,7 +199,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"c432f8d095968faf28849c9b7a8831ed\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"7f7fa737937d6a9206d68acd365a82a3\")"
     ]
   }
 }

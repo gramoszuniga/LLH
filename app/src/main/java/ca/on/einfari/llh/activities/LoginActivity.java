@@ -64,8 +64,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if (user != null && txtUsername.getText().toString().equals(user.getUserName()) &&
                 txtPassword.getText().toString().equals(user.getPassword())) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         } else {
             Toast.makeText(this, "Username or password is incorrect.", Toast.LENGTH_SHORT).show();
@@ -73,8 +72,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void register(View view) {
-        Intent intent = new Intent(this, RegisterActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, RegisterActivity.class));
     }
 
     @Override

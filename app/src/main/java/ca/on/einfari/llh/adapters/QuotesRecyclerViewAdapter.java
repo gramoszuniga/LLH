@@ -1,5 +1,5 @@
 /*
-    QuotesAdapter.java
+    QuotesRecyclerViewAdapter.java
     Assignment 2
 
     Revision History:
@@ -32,7 +32,7 @@ public class QuotesRecyclerViewAdapter extends RecyclerView.Adapter<QuotesRecycl
     }
 
     @Override
-    public QuotesRecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         return new ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.
                 listitem_quote, viewGroup, false));
     }

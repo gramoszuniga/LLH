@@ -10,11 +10,13 @@ package ca.on.einfari.llh.data;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity(foreignKeys = {@ForeignKey(entity = Quote.class, parentColumns = "id",
         childColumns = "quote", onDelete = ForeignKey.CASCADE), @ForeignKey(entity = Product.class,
-                parentColumns = "id", childColumns = "product", onDelete = ForeignKey.CASCADE)})
+        parentColumns = "id", childColumns = "product", onDelete = ForeignKey.CASCADE)}, indices = {
+        @Index(value = "quote"), @Index(value = "product")})
 public class MaterialsList {
 
     @PrimaryKey(autoGenerate = true)

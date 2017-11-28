@@ -9,16 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".activities.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".activities.LoginActivity" />
+
         <activity
             android:name=".activities.RegisterActivity"
             android:parentActivityName=".activities.LoginActivity"
@@ -27,6 +29,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ca.on.einfari.llh.activities.LoginActivity" />
         </activity>
+
         <activity
             android:name=".activities.MainActivity"
             android:parentActivityName=".activities.LoginActivity"
@@ -35,14 +38,25 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ca.on.einfari.llh.activities.LoginActivity" />
         </activity>
+
         <activity
-            android:name=".activities.ListActivity"
+            android:name=".activities.QuoteListActivity"
             android:parentActivityName=".activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ca.on.einfari.llh.activities.MainActivity" />
         </activity>
+
+        <activity
+            android:name=".activities.MaterialsListActivity"
+            android:parentActivityName=".activities.QuoteListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ca.on.einfari.llh.activities.QuoteListActivity" />
+        </activity>
+
     </application>
 
 </manifest>
