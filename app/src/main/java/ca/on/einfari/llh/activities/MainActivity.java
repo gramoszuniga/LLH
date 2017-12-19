@@ -68,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.action_search) {
             startActivity(new Intent(this, QuoteListActivity.class));
             return true;
+        } else if (item.getItemId() == R.id.action_feed) {
+            startActivity(new Intent(this, FeedListActivity.class));
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

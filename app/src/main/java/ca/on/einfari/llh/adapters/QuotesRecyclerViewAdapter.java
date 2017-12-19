@@ -38,7 +38,7 @@ public class QuotesRecyclerViewAdapter extends RecyclerView.Adapter<QuotesRecycl
     }
 
     @Override
-    public void onBindViewHolder(QuotesRecyclerViewAdapter.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(ViewHolder viewHolder, int i) {
         viewHolder.description.setText(quotes.get(i).getDescription());
     }
 

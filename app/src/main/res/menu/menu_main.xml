@@ -4,6 +4,13 @@
     tools:context="ca.on.einfari.llh.activities.MainActivity">
 
     <item
+        android:id="@+id/action_feed"
+        android:icon="@drawable/ic_rss_48dp"
+        android:orderInCategory="100"
+        android:title="@string/action_feed"
+        app:showAsAction="always" />
+
+    <item
         android:id="@+id/action_search"
         android:icon="@drawable/ic_magnify_48dp"
         android:orderInCategory="100"
