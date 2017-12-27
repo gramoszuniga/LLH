@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "76950930852",
+    "firebase_url": "https://lumber-little-helper.firebaseio.com",
+    "project_id": "lumber-little-helper",
+    "storage_bucket": "lumber-little-helper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:76950930852:android:84c53e54b19ed115",
+        "android_client_info": {
+          "package_name": "ca.on.einfari.llh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "76950930852-pmqtoh02ualkumi97607m171cjbc88dl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ca.on.einfari.llh",
+            "certificate_hash": "08e7fcae8e591b9f826e7f0db422a849edb3c776"
+          }
+        },
+        {
+          "client_id": "76950930852-hoghl88o8bktd8o4oot2i981s65i4gn5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtxx_34gpsoPU0-mLfLFMgcmbGCMZd7V0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "76950930852-hoghl88o8bktd8o4oot2i981s65i4gn5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

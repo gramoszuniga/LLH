@@ -91,13 +91,13 @@ public class MaterialsListActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Boolean result) {
             if (result) {
-                Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
-                String aEmailList[] = {quote.getEmail()};
-                emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, aEmailList);
-                emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, quote.getDescription());
-                emailIntent.setType("plain/text");
-                emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, writeBody(materialsList));
-                startActivity(emailIntent);
+                Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+                String to[] = {quote.getEmail()};
+                intent.putExtra(android.content.Intent.EXTRA_EMAIL, to);
+                intent.putExtra(android.content.Intent.EXTRA_SUBJECT, quote.getDescription());
+                intent.setType("plain/text");
+                intent.putExtra(android.content.Intent.EXTRA_TEXT, writeBody(materialsList));
+                startActivity(intent);
             } else {
                 Toast.makeText(MaterialsListActivity.this, "Something went wrong. Try again later.",
                         Toast.LENGTH_LONG).show();
