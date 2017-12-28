@@ -57,6 +57,7 @@ public abstract class LLHDatabase extends RoomDatabase {
             protected Void doInBackground(Context... contexts) {
                 getDatabase(contexts[0]).userDao().create(new User("admin", "admin", "admin",
                         "admin", "Male", "admin@admin.admin"));
+                getDatabase(contexts[0]).productDao().create(new Product("1x6x5", "Piece"));
                 getDatabase(contexts[0]).productDao().create(new Product("1x6x6", "Piece"));
                 getDatabase(contexts[0]).productDao().create(new Product("2x4x8", "Piece"));
                 getDatabase(contexts[0]).productDao().create(new Product("2x4x8 Grooved", "Piece"));
@@ -65,7 +66,7 @@ public abstract class LLHDatabase extends RoomDatabase {
                 getDatabase(contexts[0]).productDao().create(new Product("6x6x10", "Piece"));
                 getDatabase(contexts[0]).productDao().create(new Product("4x4 Post Cap", "Piece"));
                 getDatabase(contexts[0]).productDao().create(new Product("6x6 Post Cap", "Piece"));
-                getDatabase(contexts[0]).productDao().create(new Product("2x8 Lattice", "Piece"));
+                getDatabase(contexts[0]).productDao().create(new Product("1x8 Lattice", "Piece"));
                 getDatabase(contexts[0]).productDao().create(new Product("Fence Bracket", "Piece"));
                 getDatabase(contexts[0]).productDao().create(new Product("8\" Building Form",
                         "Piece"));
@@ -77,22 +78,22 @@ public abstract class LLHDatabase extends RoomDatabase {
                 getDatabase(contexts[0]).quoteDao().create(new Quote("admin@admin.admin",
                         "New Fence"));
                 getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 1, 36));
-                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 2, 4));
                 getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 3, 4));
-                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 5, 3));
-                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 7, 3));
-                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 9, 2));
-                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 10, 8));
-                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 11, 2));
-                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 13, 6));
-                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 14, 1));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 4, 4));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 6, 3));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 8, 3));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 10, 2));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 11, 8));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 12, 2));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 14, 6));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(1, 15, 1));
                 getDatabase(contexts[0]).quoteDao().create(new Quote("admin@admin.admin",
                         "Fence Replacement"));
                 getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(2, 1, 7));
-                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(2, 5, 1));
-                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(2, 9, 1));
-                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(2, 11, 1));
-                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(2, 13, 2));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(2, 6, 1));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(2, 10, 1));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(2, 12, 1));
+                getDatabase(contexts[0]).materialsListDao().create(new MaterialsList(2, 14, 2));
                 return null;
             }
 

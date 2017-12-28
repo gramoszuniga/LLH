@@ -45,8 +45,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 switch (vpProjects.getCurrentItem()) {
                     case 0:
-                        Snackbar.make(view, "TODO: Open activity to build fencing quote...",
-                                Snackbar.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainActivity.this, QuoteFencingActivity.class));
                         break;
                     case 1:
                         Snackbar.make(view, "TODO: Open activity to build siding quote...",

@@ -57,7 +57,7 @@ public class FeedListActivity extends AppCompatActivity implements FeedsRecycler
         srlFeedList.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                new FetchFeed().execute();
+                new fetchFeed().execute();
             }
         });
         rvFeedList = findViewById(R.id.rvFeedList);
@@ -67,7 +67,7 @@ public class FeedListActivity extends AppCompatActivity implements FeedsRecycler
                 DividerItemDecoration.VERTICAL);
         dividerItemDecoration.setDrawable(ContextCompat.getDrawable(this, R.drawable.llh_divider));
         rvFeedList.addItemDecoration(dividerItemDecoration);
-        new FetchFeed().execute();
+        new fetchFeed().execute();
     }
 
     @Override
@@ -75,7 +75,7 @@ public class FeedListActivity extends AppCompatActivity implements FeedsRecycler
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(feed.getLink())));
     }
 
-    private class FetchFeed extends AsyncTask<Void, Void, Boolean> {
+    private class fetchFeed extends AsyncTask<Void, Void, Boolean> {
 
         @Override
         protected void onPreExecute() {

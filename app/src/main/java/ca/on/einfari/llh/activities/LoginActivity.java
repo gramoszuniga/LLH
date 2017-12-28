@@ -22,7 +22,6 @@ import java.util.concurrent.ExecutionException;
 import ca.on.einfari.llh.R;
 import ca.on.einfari.llh.data.LLHDatabase;
 import ca.on.einfari.llh.data.User;
-import ca.on.einfari.llh.preferences.LLHSharedPreferences;
 
 public class LoginActivity extends AppCompatActivity {
 

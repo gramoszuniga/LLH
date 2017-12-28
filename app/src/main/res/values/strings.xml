@@ -17,4 +17,12 @@
     <string name="siding_image">Siding Image</string>
     <string name="action_search">Search</string>
     <string name="action_feed">Feed</string>
+    <string name="fence_length_here">Fence length in feet here…</string>
+    <string name="create">Create</string>
+    <string name="post_size">Posts size?</string>
+    <string name="_4x4">4x4</string>
+    <string name="_6x6">6x6</string>
+    <string name="post_caps">Post Caps?</string>
+    <string name="lattice">Lattice?</string>
+    <string name="quote_description">Quote description…</string>
 </resources>
