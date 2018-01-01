@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -50,6 +51,10 @@ public class QuoteFencingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quote_fencing);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         txtDescription = findViewById(R.id.txtDescription);
         txtLength = findViewById(R.id.txtLength);
         rad4x4 = findViewById(R.id.rad4x4);
@@ -208,7 +213,7 @@ public class QuoteFencingActivity extends AppCompatActivity {
                 RequestBody requestBody = RequestBody.create(LLHConstants.JSON, json.toString());
                 Request request = new Request.Builder()
                         .header("Authorization", "key=" + LLHConstants.
-                                FCN_LEGACY_SERVER_KEY).url(LLHConstants.FCM_API).post(requestBody).
+                                FCM_LEGACY_SERVER_KEY).url(LLHConstants.FCM_API).post(requestBody).
                                 build();
                 client.newCall(request).execute();
             } catch (JSONException err) {

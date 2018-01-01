@@ -13,7 +13,7 @@ import okhttp3.MediaType;
 public class LLHConstants {
 
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-    public static final String FCN_LEGACY_SERVER_KEY = "AIzaSyDNGCrlj3PhxOf6ew8wsKDfzpJ3tOd3xqU";
+    public static final String FCM_LEGACY_SERVER_KEY = "AIzaSyDNGCrlj3PhxOf6ew8wsKDfzpJ3tOd3xqU";
     public static final String FCM_API = "https://fcm.googleapis.com/fcm/send";
     public static final double FENCE_SECTION_DIVISOR = 8;
     public static final int FENCE_BOARDS_FACTOR = 18;
