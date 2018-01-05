@@ -117,4 +117,5 @@ public class MaterialsListActivity extends AppCompatActivity {
         }
         return stringBuilder.toString();
     }
+	
 }
